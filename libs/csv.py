@@ -68,7 +68,7 @@ async def update_week_vars():
         #     print(".", end="")
         #     time.sleep(0.1)
         #     timeout -=1
-        wifi.connect()
+        await wifi.connect()
         ntptime.host = "de.pool.ntp.org"
         ntptime.settime() 
         # station = network.WLAN(network.STA_IF)
@@ -78,7 +78,7 @@ async def update_week_vars():
         #     print("WiFi disabled")
         # else:
         #     print("not connected")
-        wifi.disconnect()
+        await wifi.disconnect()
             
         # Zeitkorrektur (Sommerzeit 2026: UTC+2)
         sec = time.time() + (120 * 60)

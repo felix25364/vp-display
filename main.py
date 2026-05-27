@@ -6,10 +6,10 @@ import libs.download as download    # for downloading the files
 import libs.csv as csv              # for time sync and csv interpreting
 import libs.general as gen
 
-wifi.connect()
 
 
 async def main():
+    await wifi.connect()
     await gen.multitask(csv.update_week_vars(), download.download())
     gc.collect()
     

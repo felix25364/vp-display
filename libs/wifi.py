@@ -1,8 +1,8 @@
 import network
 import utime as time
 import libs.secrets as secrets
-
-def connect():
+import uasyncio as asyncio
+async def connect():
     station = network.WLAN(network.STA_IF)
     if station.isconnected():
         print("already connected")
@@ -15,12 +15,12 @@ def connect():
     timeout = 300
     while not station.isconnected() and timeout > 0:
         print(".", end="")
-        time.sleep(0.1)
+        await asyncio.sleep(0.1)
         timeout -=1
 
     print("\nconnected with ip", station.ifconfig()[0])
     
-def disconnect():
+async def disconnect():
     station = network.WLAN(network.STA_IF)
     if station.active():
         station.disconnect()
