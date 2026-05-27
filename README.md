@@ -4,7 +4,7 @@ A simple MicroPython script for a Waveshare 7" Touch ESP32-S3 display using LVGL
 
 ## Setup
 
-This project requires a configuration file for your local credentials. Create a file named `secrets.py` in the root directory of your project:
+This project requires a configuration file for your local credentials. Create a file named `secrets.py` in the libs directory of your project:
 
 ```python
 # secrets.py
