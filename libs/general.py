@@ -1,4 +1,4 @@
-import asyncio
+import uasyncio as asyncio
 
 
 async def multitask(*args):
