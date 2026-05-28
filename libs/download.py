@@ -118,11 +118,11 @@ async def download():
     await download_index()
     await download_plan_files()
 
-def list_files():
+async def list_files():
     files = os.listdir()
     print(files)
         
-def rem_files():
+async def rem_files():
     for file in os.listdir():
         if file.endswith(".csv"):
             try:
